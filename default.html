@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKJ-SMK NEGERI 10 GARUT</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="imgs/svg/logo-baru.jpeg"/>
+
+    <!-- BSv5 Beta 2 CSS -->
+    <link rel="stylesheet" href="css/bootstrap.v5-beta2.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Google Fonts ( JetBrains Mono ) -->
+    <!--
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;700&display=swap" rel="stylesheet">
+    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+    <!-- BSv5 Beta 2 JS -->
+    <script src="js/bootstrap.v5-beta2.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/index.js" defer></script>
+
+    <style>
+
+
+        .services-details-inner .card {
+            /*border: 1px solid var(--bs-primary);*/
+            border-left: 4px solid var(--bs-primary);
+            overflow: hidden;
+        }
+
+        .card-float {
+            position: absolute;
+            right: -160px;
+            top: 10px;
+            transition: right 0.6s ease-in-out;
+        }
+
+        .card:hover .card-float {
+            right: 10px;
+        }
+
+        .dev-stack {
+            margin-bottom: 10px;
+        }
+
+        .dev-stack-details-inner .card {
+            border: 2px solid var(--bs-primary);
+        }
+
+        .dev-stack .card {
+            box-shadow: none!important;
+            transition: box-shadow 0.4s, transform 0.3s;
+        }
+
+        .dev-stack .card:hover {
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            transform: scale(1.05);
+        }
+
+        .navbar-brand .c-logo {
+            transition: color 0.4s, transform 0.4s;
+        }
+
+        .navbar-brand .c-logo:hover {
+            /*color: #000;*/
+            transform: scale(1.08);
+        }
+
+        ._img-bg {
+            transition: opacity 0.6s;
+        }
+
+        .img-fills:hover ._img-bg {
+            opacity: 1!important;
+        }
+
+        .name-caps-1 {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        main > div {
+            padding: 80px 0!important;
+        }
+
+        main > div:nth-child(2n) {
+            background: #f9f9f9;
+        }
+
+        .mj-assocaite-proj-img-show:hover {
+            content: url(imgs/projects/mjassociates/proj_mja_2_6s.webp);
+        }
+
+        .row-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+        }
+
+        more-show {
+            display: none;
+        }
+
+
+        .our-development-stratergy-inner .row-grid-4 .card .card-title {
+            /*box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;*/
+            padding: 4px 6px;
+            border-left: 4px solid var(--bs-primary);
+        }
+
+        .our-development-stratergy-inner .row-grid-4 .card {
+            box-shadow: none!important;
+            transition: box-shadow 0.4s, height 0.9s;
+        }
+
+        .our-development-stratergy-inner .row-grid-4 .card:hover {
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        }
+
+        .more-show-btn {
+            font-size: 12px;
+            padding: 4px 6px;
+        }
+
+        .img-arrow-direction {
+            position: absolute;
+            right: -16px;
+            top: 45%;
+            z-index: 2;
+            opacity: 0.7;
+            display: none; /* Not Required Too Much Over*/
+        }
+
+        /*
+        .img-arrow-direction img {
+
+        }
+        */
+        .benefits-card-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .benefits-card-img img {
+            height: 100%;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .intro-content {
+                height: auto!important;;
+            }
+
+            .img-fills > img {
+                height: auto!important;
+                object-fit: contain!important;
+            }
+
+            .our-projects img {
+                width: 320px;
+                height: 320px;
+            }
+
+            .img-arrow-direction {
+                top: auto;
+                right: auto;
+                bottom: -16px;
+                left: 45%;
+                transform: rotate( 90deg );
+                display: none; /* Not Required Too Much Over*/
+            }
+
+            .benefits-card-img {
+                justify-content: flex-start;
+            }
+
+            .benefits-card-img img {
+                height: 125px;
+                width: 125px;
+
+            }
+        }
+
+
+        .dev-stack-details .dev-section h4 {
+            border-left: 4px solid var(--bs-primary);
+            padding-left: 10px;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content {
+            border: none;
+            border-radius: unset;
+        }
+
+        .modal-header, .modal-body {
+            padding: 0.8rem;
+        }
+
+        /*
+        .our-benefits .card:hover {
+            border: 2px solid var(--bs-primary);
+        }
+        */
+
+        .our-benefits .card:hover img {
+            transform: scale(1.10);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top" style="min-height: 75px;">
+            <div class="container">
+
+                <a class="navbar-brand" href="#">
+                    <div class="c-logo d-flex" style="gap: 0.4rem; padding: 0.4rem; justify-content: center; align-items: flex-end;">
+                        <img src="imgs/svg/icon.png" width="50" alt="">
+                        <div style="font-size: 2rem;">TKJ SEGAR</div>
+                        <!--
+                        <span> <span class="name-caps-1">L</span>earn </span>
+                        <h4 class="" style="margin-bottom: -6px!important;"> & </h4>
+                        <span> <span class="name-caps-1">D</span>evelop </span>
+                        -->
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#n-dropdown" aria-controls="n-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="n-dropdown">
+
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Gallery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Other
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://kurikulum-iht.tkjsegar.online">Kurikulim IHT</a></li>
+                            <li><a class="dropdown-item" href="https://photos.app.goo.gl/fQ8fMxxK5xbfxLFU6">PKL 2022</a></li>
+                            <li><a class="dropdown-item" href="https://photos.app.goo.gl/CkLJ9fTanoviwq2Y6">IT Support</a></li>
+                            <li><a class="dropdown-item" href="#">Comingsoon</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="whatsapp-float-btn">
+            <a class="whatsapp-float-btn-icon text-white bg-dark shadow" style="display: flex; justify-content: center; align-items: center;" href="https://wa.me/628987763675" target="_blank">
+                <img src="imgs/svg/whatsapp_buey.svg" width="70px" height="70px" alt="">
+            </a>
+            <a href="https://wa.me/628987763675" target="_blank" class="whatsapp-float-btn-text align-self-center p-2 shadow" style="background-color: azure; border-radius: 8px;margin-left: 4px; text-decoration: none;">
+                Hubungi Saya? <strong>Langsung Chat..</strong>
+            </a>
+        </div>
+    </header>
+    <main>
+
+        <!-- Intro Content -->
+        <div class="intro-content" style="padding: 40px 0px; /*background: var(--bs-gray-dark);*/ ">
+            <div class="container">
+                <div class="intro-content-inner">
+                    <div class="row" style="justify-content: center; align-items: center; row-gap: 1rem;">
+                        <div class="col-md-7">
+                            <div class="card-body p-0">
+                                <h2 class="card-title text-dark"><b>Berdiskusi Langsung Dengan Kami</b></h2>
+                                <h4 class="card-subtitle mb-4 text-muted">Untuk membahas segala sesuatu yang berhubungan dengan Teknologi Informasi dan Komunikasi</h4>
+
+                                <a href="https://t.me/+AU6v5umxLPRmZDNl" class="btn btn-outline-primary" >Join Us</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="img-fills" style="position: relative;">
+                                <img class="_img-no-bg w-100" src="imgs/svg/logo-baru.jpeg" alt="Our Intro">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Intro Content -->
+
+        <!-- Our Motive -->
+        <div class="our-motive" style="padding: 40px 0; background: #f9f9f9;">
+            <div class="container">
+                <div class="our-motive-inner">
+                    <div class="row" style="justify-content: center; align-items: center; row-gap: 1rem;">
+                        <div class="col-md-5">
+                            <div class="img-fills" style="position: relative;">
+                                <img class="_img-no-bg w-100" src="imgs/svg/21103.jpg" alt="Our Motive">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body p-0">
+                                <h2 class="card-title text-dark"><b>Teknik Komputer Jaringan</b></h2>
+                                <h4 class="card-subtitle mb-4 text-muted">
+                                    adalah program keahlian yang bertujuan membekali peserta didik dengan keterampilan, pengetahuan, dan sikap agar kompeten dalam merakit, menginstall program, merawat dan memperbaiki komputer serta jaringannya.
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Motive Ends -->
+
+
+        <!-- Services Offered Ends -->
+        <div id="services-spa" class="services-details" style="padding: 40px 0;">
+            <div class="container">
+                <div class="services-details-inner">
+                    <div class="services-details-intro mb-4">
+                        <div class="">
+                            <h3 class="mb-4"> <span style="border-bottom: 4px solid var(--bs-primary); padding: 5px; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: 4px; "> Pembelajaran</span></h3>
+                            <h5 class="card-subtitle mb-2 text-muted">
+                                Kita belajar tentang
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="imgs/svg/network-svgrepo-com.svg" class="card-img-top" alt="Security" width=100 height=100 style="object-fit: contain; margin: 8px; ">
+                                <div class="card-float">
+                                    <!--<a href="#" class="btn btn-primary">Explore</a>-->
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Networking</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Basic Network, Configuration & Administrator
+                                    </h6>
+                                    <p class="card-text">
+                                        Jaringan telekomunikasi yang memungkinkan antar komputer untuk saling berkomunikasi dengan bertukar data.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="imgs/svg/exe-svgrepo-com.svg" class="card-img-top" alt="Security" width=100 height=100 style="object-fit: contain; margin: 8px; ">
+                                <div class="card-float">
+                                    <!--<a href="#" class="btn btn-primary">Explore</a>-->
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Software</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Installation & Troubleshooter
+                                    </h6>
+                                    <p class="card-text">
+                                        Data yang diprogram, disimpan, dan diformat secara digital dengan fungsi tertentu.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="imgs/svg/installation.svg" class="card-img-top" alt="Security" width=100 height=100 style="object-fit: contain; margin: 8px; ">
+                                <div class="card-float">
+                                    <!--<a href="#" class="btn btn-primary">Explore</a>-->
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Hardware</h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">Assembly, Repair & Maintenance
+                                    </h6>
+                                    <p class="card-text">
+                                         Bagian fisik komputer, dan dibedakan dengan data yang berada di dalamnya atau yang beroperasi di dalamnya.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+        <!-- Services Offered Ends -->
+
+
+<div id="projects-spa" class="our-projects">
+            <div class="container">
+                <div class="our-projects-inner">
+                    <div class="our-projects-intro mb-4">
+                        <div class="">
+                            <h3 class="mb-4">
+                                <span style="border-bottom: 4px solid var(--bs-primary); padding: 5px; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: 4px; "> Aktivitas </span>
+                            </h3>
+                            <h5 class="card-subtitle mb-2 text-muted">
+                                Channel YouTube SMKN 10 GARUT dan akun instagram TKJ SMKN 10 GARUT
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row" style="row-gap: 1rem;">
+                        <div class="col-md-6">
+                            <div class="card" style="overflow: hidden;border-right: 4px solid var(--bs-primary);">
+                              <iframe width="auto" height="310" src="https://www.youtube.com/embed/vyIUS3d0hew" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                                <div class="card-header" style="padding: 0.6rem;">
+                                    <h5 class="card-title">Google IT Support</h5>
+                                    <h5 class="card-subtitle text-muted">
+                                        Teknik Komputer & Jaringan SMKN 10 Garut Has successfully completed the online, non-credit Professional Certificate.
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card" style="overflow: hidden;border-right: 4px solid var(--bs-primary);">
+                              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cgavxznp6Z3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/Cgavxznp6Z3/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Lihat postingan ini di Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Cgavxznp6Z3/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Sebuah kiriman dibagikan oleh TKJ SMKN 10 GARUT (@tkj.smkn10garut)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+
+                                <div class="card-header" style="padding: 0.6rem;">
+                                    <h5 class="card-title">Kegiatan UKK Lulusan 2022</h5>
+                                    <!--<h5 class="card-subtitle text-muted">
+                                        SENAM PAGI Kegiatan Anak TKJ Sebelum Pelatihan Sertifikasi Google IT Support
+                                    </h5>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Colab -->
+        <div class="dev-stack-details" style="padding: 40px 0; background: #;">
+            <div class="container">
+                <div class="dev-stack-details-inner">
+                    <div class="dev-stack-details-intro mb-4">
+                        <div class="">
+                            <h3 class="mb-4"> <span style="border-bottom: 4px solid var(--bs-primary); padding: 5px; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: 4px; "> Berkolaborasi Dengan </span></h3>
+                            <h5 class="card-subtitle mb-2 text-muted">
+                                Kami berkolaborasi dengan
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <!--<div class="dev-section">
+                            <h4>2022</h4>
+                        </div>-->
+                        <div class="dev-stack backend-dev-stack d-flex flex-wrap" style="gap: 1rem">
+                            <div class="card" style="height: 160px; width: 160px;">
+                                <img src="imgs/svg/lang/idn.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                                <div class="card-body text-center" style="padding: 0.6rem;">
+                                    <h5 class="card-title">IDN</h5>
+                                </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                                <img src="imgs/svg/lang/INCO.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                                <div class="card-body text-center" style="padding: 0.6rem;">
+                                    <h5 class="card-title">INCO</h5>
+                                </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                                <img src="imgs/svg/lang/PLAN.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                                <div class="card-body text-center" style="padding: 0.6rem;">
+                                    <h5 class="card-title">PLAN</h5>
+                                </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                                <img src="imgs/svg/lang/google.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                                <div class="card-body text-center" style="padding: 0.6rem;">
+                                    <h5 class="card-title">GOOGLE</h5>
+                                </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                                <img src="imgs/svg/lang/COURSERA.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                                <div class="card-body text-center" style="padding: 0.6rem;">
+                                    <h5 class="card-title">COURSERA</h5>
+                                </div>
+                            </div>
+
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/telkom.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">TELKOM</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/BNSP.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">BNSP</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/LSP.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">LSPTPI</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/NETINCO.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">NETINCO</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/esq.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">ESQ</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/INFRADIGITAL.jpg" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">IDF</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/MASTERCARD.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">MASTER CARD</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/adinusa.png" class="card-img-top mt-2" alt="TKJ-SMKN10GARUT" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">ADINUSA</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/MIKROTIK.jpg" class="card-img-top mt-2" alt="Security" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">MIKROTIK</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/CITRAWEB.jpg" class="card-img-top mt-2" alt="Security" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">CITRAWEB</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/APJII.jpg" class="card-img-top mt-2" alt="Security" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">APJII</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/LPKIA.jpg" class="card-img-top mt-2" alt="Security" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">LPKIA</h5>
+                            </div>
+                            </div>
+                            <div class="card" style="height: 160px; width: 160px;">
+                            <img src="imgs/svg/lang/BONE.jpg" class="card-img-top mt-2" alt="Security" width=100 height=100 style="object-fit: contain;">
+                            <div class="card-body text-center" style="padding: 0.6rem;">
+                            <h5 class="card-title">B-ONE</h5>
+                            </div>
+                            </div>
+
+                        </div>
+                        </div>
+                        <div class="dev-stack frontend-dev-stack">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colab -->
+      
+        <!-- How We Develop Our Development Stratergy -->
+
+        <div class="our-development-stratergy">
+            <div class="container">
+                <div class="our-development-stratergy-inner">
+                    <script>
+
+                        function show_more_card_content(clicker) {
+
+                            var moreTextElement = clicker.previousElementSibling;
+                            console.log("Status: ",  moreTextElement, "  => ", moreTextElement.style.display    )
+                            if (moreTextElement.style.display === "block" || moreTextElement.style.display === "inline") {
+                                clicker.innerHTML = "Read More";
+                                moreTextElement.style.display = "none";
+                            } else {
+                                clicker.innerHTML = "Read Less";
+                                moreTextElement.style.display = "inline";
+                            }
+                        }
+                    </script>
+                    <div class="our-development-stratergy-intro mb-4">
+                        <div class="">
+                            <h3 class="mb-4">
+                                <span style="border-bottom: 4px solid var(--bs-primary); padding: 5px; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: 4px; "> Pekerjaan Tamatan TKJ </span>
+                            </h3>
+                            <h5 class="card-subtitle mb-2 text-muted">
+                                Deskripsi.
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="row-grid-4">
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>1</h3>
+                                <h5 class="card-title">ISP/Network Security</h5>
+                                <p class="card-text">Mengidentifikasi kebutuhan keamanan jaringan, Mendesain sistem keamanan jaringan, Menginstalasi security jaringan, <more-show>Mengoperasikan security jaringan dan Monitoring keamanan jaringan.</more-show>
+                                <button class="btn btn-primary more-show-btn" onclick="show_more_card_content(this)">Read more</button></p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>2</h3>
+                                <h5 class="card-title">Wireless Networking</h5>
+                                <p class="card-text">Merancang, melakukan survey lapangan, Membuat antenna, Menginstalasi jaringan wireless, Mengkonfigurasi peralatan
+                                    <more-show>
+                                        dan Mengoperasikan jaringan wireless.
+                                    </more-show>
+                                    <button class="btn btn-primary more-show-btn" onclick="show_more_card_content(this)">Read more</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>3</h3>
+                                <h5 class="card-title">Network Administrator</h5>
+                                <p class="card-text">Mendiagnosis permasalahan perangkat yang tersambung jaringan berbasis luas (Wide Area Network) dan Menganalisa dan
+                                <more-show>
+                                    memperbaiki kerusakan/kesalahan /tidak bekerjanya koneksi di sistem jaringan.
+                                </more-show>
+                                <button class="btn btn-primary more-show-btn" onclick="show_more_card_content(this)">Read more</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>4</h3>
+                                <h5 class="card-title">Administrasi Server</h5>
+                                <p class="card-text">Memanage server, Mengatur band width, File sharing, Memonitor server dan Mengatur traffic.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>5</h3>
+                                <h5 class="card-title">Computer Integrator</h5>
+                                <p class="card-text">Merakit komputer, Memperbaiki komputer dan Menginstalasi sistem operasi GUI dan CLI</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>6</h3>
+                                <h5 class="card-title">Voip Integrator</h5>
+                                <p class="card-text">Indentifikasi kebutuhan, Merancang jaringan voip dan Instalasi softswitch
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>7</h3>
+                                <h5 class="card-title">Linux Administrator</h5>
+                                <p class="card-text">Menginstalasi sistem operasi Linux, Maintenance sistem operasi Linux dan Melakukan virtualisasi</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>8</h3>
+                                <h5 class="card-title">Integrator Jaringan</h5>
+                                <p class="card-text">Merancang bangun dan menganalisa Wide Area Network, Memasang jaringan lokal, Melakukan instalasi perangkat jaringan
+                                <more-show>berbasis luas (Wide Area Network), Menginstalasi sistem operasi jaringan, Menganalisa memperbaiki kerusakan/kesalahan/tidak bekerjanya koneksi di sistem jaringan dan Merancang web database untuk content server
+                                </more-show>
+                                <button class="btn btn-primary more-show-btn" onclick="show_more_card_content(this)">Read more</button></p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: nonotnow; border-top: 4px solid var(--bs-primary)">
+                            <div class="img-arrow-direction">
+                                <img src="imgs/svg/right-arrow.svg" alt="" width="32" height="32">
+                            </div>
+                            <div class="card-body">
+                                <h3>9</h3>
+                                <h5 class="card-title">Web Administrator</h5>
+                                <p class="card-text">Konfigurasi web, Perawatan web, Memonitor jaringan, Mengatur traffic dan Melakukan perbaikan atau
+                                  <more-show>setting ulang koneksi jaringan WAN.
+                                  </more-show>
+                                  <button class="btn btn-primary more-show-btn" onclick="show_more_card_content(this)">Read more</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How We Develop Ends -->
+
+    </main>
+    <footer>
+        <footer class="pt-4 pt-md-5" style="margin: 40px!important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <img class="mb-2" src="imgs/svg/icon.png" alt="" width="125" height="125">
+                        <small class="d-block mb-3">Cerdas, Efektif, Rajin, Inovatif dan Aktif. </small>
+                        <small class="d-block mb-3 text-muted">© 2022</small>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h5 style="border-left: 4px solid var(--bs-primary); padding-left: 6px;">Navigate</h5>
+                        <ul class="list-unstyled text-small">
+                        <li><a class="link-primary" href="#">Home</a></li>
+                        <li><a class="link-primary" href="#projects-spa">Activities</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h5 style="border-left: 4px solid var(--bs-primary); padding-left: 6px;">Contact</h5>
+                        <ul class="list-unstyled text-small">
+                        <li> <a class="link-primary" href="mailto:tkjsegar.smkn10garut@gmail.com" target="_blank">Email</a></li>
+                        <li><a class="link-primary" href="https://instagram.com/tkj.smkn10garut" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h5 style="border-left: 4px solid var(--bs-primary); padding-left: 6px;">About</h5>
+                        <ul class="list-unstyled text-small">
+                        <li><a class="link-primary" href="https://smkn10garut.sch.id/">SMKN 10 GARUT</a></li>
+                        <li><a class="link-primary" href="https://www.google.com/maps/place/SMKN+10+Garut/@-7.2756408,107.9167654,17z/data=!3m1!4b1!4m5!3m4!1s0x2e658f46ed69e7f7:0x1efb5d31e1e7b881!8m2!3d-7.2756408!4d107.9189541">Locations</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <footer class="footer mt-auto py-3 bg-light">
+            <div class="container">
+                <center>
+                    <span class="text-muted">All Right Reserved <strong><b><a href="#">Alumni TKJ 2022</strong>.</b></span>
+                </center>
+            </div>
+        </footer>
+        <modal-setup>
+            <div class="modal fade" id="show-left-todo" tabindex="-1" aria-labelledby="exampleModalPopoversLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalPopoversLabel">🔥</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="border-radius: 50%; background-color: #f1f1f1; border: 1px solid #6e6868;" ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                😅 Masih tersisa untuk Melakukan beberapa pengembangan, kami sedang mengerjakannya.
+                            </p>
+                            <h5>Tetap disini Kami akan memperbarui banyak hal di sini.</h5>
+                            berbincanglah dengan kami <a href="https://wa.me/628987763675" class="btn btn-success" target="_blank">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </modal-setup>
+    </footer>
+</body>
+</html>
